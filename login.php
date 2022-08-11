@@ -1,49 +1,73 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html>
 <head>
+    <title> database </title>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+
 </head>
 <body>
-
 <?php
-    $user= $_POST['user_login']; //passing name
-    $password= $_POST['passqord_login'];
+        //require_once
+    // ---- htmlentities — Convert all applicable characters to HTML entities
+    // ---- addslashes — Quote string with slashes
+        $user = htmlentities(addslashes($_POST["user_login"]));
+        $password = htmlentities(addslashes($_POST["password_login"]));
+        
+        try{
+    // ---- class PDO
+            $conexion = new PDO('mysql:host=localhost; dbname=mybank','root','');
+            $conexion -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    $conexion = new mysqli("localhost","root","","mybank");
+    // -----  Set characteres.        
+            $conexion -> exec("SET CHARACTER SET utf8");
+            
+            
+    // ---- query.
+            $sql = "select e_user, e_password from employee where e_user= :m_user and e_password = :m_passw"; 
+        
+    // ---- Prepare the query.
+            $result = $conexion -> prepare($sql);
+            
 
-    if (mysqli_connect_errno()){
-        echo "Impossible to conect with the database";
-        exit ();
-    }
+        // ---- PDOStatement::bindValue — Binds a value to a parameter --> :marcador
+            
 
-    mysqli_select_db($conexion,"mybank") or die ("Database couldn't be found");
+            $result -> bindValue(":m_user",$user);
+            $result -> bindValue(":m_passw",$password);
 
-    mysqli_set_charset($conexion,"UTF-8");
+    // ---- Execute query.
+            $result -> execute();
+            if($result){echo" resultado ok";}
+
+    // ---- I need to know if the user exists in my database.
+            // ---- PDOStatement::rowCount — Returns the number of rows affected by the last SQL statement
+
+            $record = $result -> rowCount();
+
+        // ---- If the record exists.
+        
+            if($record != 0){
+
+        // ---- Iniciando una sesion. Si el usuario existe en la base de datos me creas la session.
+                // ---- session_start — new session 
+                session_start();
+
+                
+                $_SESSION["user_1"] = $_POST["user_login"]; 
+
+                header("location:Employee.php");
+
+            } else{
+                header("location:index.html");
+            }
 
 
-    $sql = "select * from employee where e_user = 'John12'"; //En esta variable escribimos en SQL la consulta que queremos hacer.
-    $resultado = mysqli_query($conexion,$sql); // en la variable resultado nos saca la tabla entera. 
-  
-    $row = mysqli_fetch_row($resultado); // en una variable fila, pasamos la tabla fila por fila con mysqli_fetch_row. Cada fila es un array de elementos.
-    
-    if(count($row)==0){"No hay resultados";} else{"1";}
-    
-    echo "<br>";
-    while($row = mysqli_fetch_row($resultado)){ // Mientras haya datos se almacenan en row.
-        for ($i=0; $i < count($row); $i++){
-              echo $row[$i]." / ";
-        }  
-        echo "<br>";      
- }
- 
+        } catch(Exception $e){
+            die('Error: '.$e -> GetMessage());
+        } finally{
+            $conexion = null;
+        }
 
-
-//if($user = and $password)
-
-//header("Location:Employee.html");
 ?>
 </body>
 </html>
