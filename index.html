@@ -16,78 +16,43 @@
 
 	$(document).ready(function() {
 		
-        
-        $("#register").hide();
         $("#login").hide();
-        
-        document.getElementById("Register").addEventListener("click",show_register,false);
+        $("#image_1").hide();
         document.getElementById("Login").addEventListener("click",show_login,false);
 
     });
-    
-    function show_register(){
-        $("#register").fadeIn(750);
-        $("#login").hide();
-    }
      function show_login(){
         $("#login").fadeIn(750);
-        $("#register").hide();
-    }
-
-
-
- 
+        $('#image_1').fadeIn(1500);
+     }
 </script>
 </head>
+
 <body>
     <div id="welcome"><h1>Welcome to my bank</h1></div>
+    <div id="container">
+        <p>Welcome to my test website. Please introuduce your user and password!</p>
+    </div>
     <div id="form">
         <input type="button" value = "Login" id="Login" class="button">
-        <input type="button" value = "Register" id="Register" class="button">
     </div>
-    <div class="register">
-        <form method="post" action="register.php">
-            <table id="register">
-                <tr>
-                    <td><label for="name">Name:</label></td>
-                    <td><input class="input" type="text" name="name" id="name" placeholder="Name"></td></tr>
-                <tr>
-                    <td><label for="surname">Surname:</label></td>
-                    <td><input class="input" type="text" name="surnname" id="surname" placeholder="Surname"></td></tr>
-                <tr>
-                    <td><label for="age">Age: </label>
-                    <td><input class="input" type="number" min=18 max= 65 name="age" id="age" placeholder="18"></td></tr>
-                <tr>
-                    <td><label for="email">Email: </lablel></td>
-                    <td><input class="input" type="text" name="email" id="email" placeholder="email@gmail.com"></td></tr>
-                <tr>
-                    <td><label for="address">Address:</label>
-                    <td><input class="input" type="text" name="address" id="address" placeholder="Address"></td></tr>
-                <tr>
-                    <td><label for="user">User:</label></td>
-                    <td><input class="input" type="text" name="user" id="user" placeholder="User"></td></tr>
-                <tr>
-                    <td><label for="password">Password:</label></td>
-                    <td><input class="input" type="password" name="password" id="password" placeholder="Password"></td></tr>
-                <tr class="button"><td colspan="2"><input type="submit" value="Register" name="reg" id="reg"></td></tr>
-            </table>
-        </form>
-    </div>
+
     <div class="login">
         <form method="post" action="login.php">
             <table id="login">
             <tr>
                 <td><label for="user_login">User:</label></td>
-                <td><input class="input" type="text" name="user_login" id="user_login" placeholder="User"></td></tr>
+                <td><input class="input" type="text" name="user_login" id="user_login" placeholder="User" required></td></tr>
             <tr>
                 <td><label for="password_login">Password:</label></td>
-                <td><input class="input" type="password" name="passqord_login" id="password_login" placeholder="Password"></td></tr>
-            <tr class="button"><td colspan="2"><input type="submit" value="Login" name="log" id="log"></td></tr>
+                <td><input class="input" type="password" name="password_login" id="password_login" placeholder="Password"></td></tr>
+            <tr><td colspan="2" id="log_td"><input type="submit" value="Login" name="log" id="log"></td></tr>
             </table>
         </form>
     </div>
-    <div id="container">
-        <p>Bienvenidos a mi pagina web de prubea</p>
+    <div >
+        <img src="img/Business people.jpg" title="Business people" id="image_1">
     </div>
+
 </body>
 </html>
