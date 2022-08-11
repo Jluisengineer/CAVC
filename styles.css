@@ -1,0 +1,39 @@
+*{
+    margin:0;
+}
+body{
+    background-color: lightblue;
+}
+
+#welcome{
+    background-color: aqua;
+    text-align: center;
+}
+#form{
+    margin:auto;
+    margin-top: 15px;
+    margin-left: 10px;
+}
+
+ .register, .login{
+
+    float: left;
+    padding-top: 10px;
+    background-color: aqua;
+}
+#register td, #login td{
+    padding: 4px;
+    padding-left: 25px;
+    
+}
+
+
+.button{
+    text-align: center;}
+
+#container{
+    margin:auto;
+    margin-top: 10px;
+    margin-left: 10px;
+
+}
