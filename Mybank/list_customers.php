@@ -51,8 +51,6 @@
         $row = $list -> list_customers($start,$size);
     
 
-    
-    echo"El numero de paginas son".$total_pages;
     ?>
     <table width=75% border='0' align='center'>
         <tr><th>Id</th>
@@ -68,14 +66,15 @@
         while($customer = $row->fetch(PDO::FETCH_ASSOC)){
             echo "<tr>";
             echo "<td>".$customer['c_id']."</td>";
+            $id=$customer['c_id'];
             echo "<td>".$customer['c_name']."</td>";
             echo "<td>".$customer['c_surname']."</td>";
             echo "<td>".$customer['c_address']."</td>";
             echo "<td>".$customer['c_phone']."</td>";
             echo "<td>".$customer['c_email']."</td>";
-            echo "<td class='bot'><a><input type='button' value='Update'></a>";
-            echo "<td class='bot'><a><input type='button' value='Delete'></a>";
-            echo "<td class='bot'><a><input type='button' value='Add Transaction'></a></td>";
+            echo "<td class='bot'><a ><input type='button' value='Update'></a>";
+            echo "<td class='bot'><a href='delete_customer.php?Id=$id'><input type='button' value='Delete'></a>";
+            echo "<td class='bot'><a href='new_transaction.php?Id=$id'><input type='button' value='Add Transaction'></a></td>";
             echo "</tr>";
         }
         ?>

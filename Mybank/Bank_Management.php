@@ -63,6 +63,19 @@ class Bank_Management extends Conexion{
         $result -> execute();
         return $result->rowCount();
     }
+    public function select_transaction($id){
+        $sql = "select c_name, c_surname, ac_number, ac_sortcode from customers inner join accounts on c_id=ac_c_id where c_id = $id";
+        $result = $this->conexion -> prepare($sql);
+        $result -> execute();
+        return $result;
+    }
+
+    public function delete_customer($id){
+        $sql = "delete from customers where c_id=$id";
+        $result = $this->conexion -> prepare($sql);
+        $result -> execute();
+        return $result;
+    }
 }
 
 ?>
