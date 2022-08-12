@@ -1,0 +1,36 @@
+body{
+    background-color: #ccebfd;
+}
+h1{
+    text-align: center;
+    font-size: 30pt;
+}
+table{
+    text-align: center;
+}
+table th{
+    font-size:1.5em;
+	text-decoration:underline;
+    width:4cm;
+}
+table .address{
+    width:20cm;
+}
+table td{
+    text-align:center;
+	border:1px #000099 dotted;
+    width:10cm
+
+}
+table .bot{
+	padding:0 ;
+	border:0;
+    width: 3cm;
+}
+table .sin{
+	border:0 none;
+}
+#pages{
+    text-align: center;
+    margin-top: 5px;
+}

@@ -1,0 +1,33 @@
+body{
+    background-color: #ccebfd;
+}
+img{
+    margin: 20px; 
+    border: 1px solid black
+}
+h1{
+    text-align: center; 
+    font-size: 70pt; 
+    font-family: 'Bebas Neue';
+}
+#options{
+    text-align: center;
+    align-items: center;
+    
+}
+table{
+    margin:0 auto;
+    align-items: center;
+}
+#register td{
+    padding-top: 12px;
+
+}
+table#search td, table#search1 td{
+    border: solid 2px;
+    text-align: center;
+    width: 200px;
+    padding: 2px;
+    padding-left: 10px;
+    padding-right: 10px;
+}

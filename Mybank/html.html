@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="new_customer.php">
+        <table>
+            <tr><td><label>Name:</label></td><td><input type="text" name="name" id="name" placeholder="Name" required></td></tr>
+            <tr><td><label>Surname:</label></td><td><input type="text" name="surname" id="surname" placeholder="Surname" required></td></tr>
+            <tr><td><label>Address:</label></td><td><input type="text" name="address" id="address" placeholder="Address" required></td></tr>
+            <tr><td><label>Phone:</label></td><td><input type="text" name="phone" id="phone" placeholder="Phone" required></td></tr>
+            <tr><td><label>email:</label></td><td><input type="text" name="email" id="email" placeholder="Email@email" required></td></tr>
+            <tr><td><input type="submit" value="Add"></td><td><input type="button" id="return" value="Return"></td></tr>
+        </table>
+        
+    </form>
+    <script>
+        document.getElementById("return").click(window.history.back());
+    </script>
+    
+</body>
+</html>
