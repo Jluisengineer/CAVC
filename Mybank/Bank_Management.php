@@ -76,6 +76,14 @@ class Bank_Management extends Conexion{
         $result -> execute();
         return $result;
     }
+
+    public function update_customer($id,$name,$surname,$address,$phone,$email){
+        $sql = "update customers set c_name='$name', c_surname ='$surname', c_address='$address', c_phone='$phone', c_email='$email' where c_id=$id";
+        $result = $this->conexion -> prepare($sql);
+        $result -> execute();
+        return $result;
+    
+    }
 }
 
 ?>

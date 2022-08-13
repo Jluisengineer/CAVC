@@ -43,6 +43,12 @@
         
     
     while($customer = $row->fetch(PDO::FETCH_ASSOC)){
+        $id = $customer['c_id'];
+        $name = $customer['c_id'];
+        $surname = $customer['c_id'];
+        $address = $customer['c_id'];
+        $phone = $customer['c_id'];
+        $email = $customer['c_id'];
         echo "
         <tr><td>".$customer['c_id']."</td>
         <td>".$customer['c_name']."</td>
@@ -50,19 +56,13 @@
         <td>".$customer['c_address']."</td>
         <td>".$customer['c_phone']."</td>
         <td>".$customer['c_email']."</td>
-        <td ><a><input type='button' value='Update'></a>
-        <td ><a><input type='button' value='Delete'></a>
+        <td ><a href=''update_customer.php?Id=$id&name=$name&surname=$surname&address=$address&phone=$phone&email=$email''><input type='button' value='Update'></a>
+        <td ><a href='delete_customer.php?Id=$id'><input type='button' value='Delete'></a>
         <td ><a><input type='button' value='Add Transaction'></a></td>
 
-        </tr>
-        
-        
-        </table>";
-        
-        
-        
-        
+        </tr>";
     }
+    echo "</table>";
     ?>
     <div style="text-align: center; margin-top:25px;"><a href="2_Employee.php"><input type="button" value = "Home"></a><div>
 </body>
