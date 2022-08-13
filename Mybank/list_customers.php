@@ -67,12 +67,17 @@
             echo "<tr>";
             echo "<td>".$customer['c_id']."</td>";
             $id=$customer['c_id'];
+            $name = $customer['c_name'];
+            $surname= $customer['c_surname'];
+            $address= $customer['c_address'];
+            $phone= $customer['c_phone'];
+            $email= $customer['c_email'];
             echo "<td>".$customer['c_name']."</td>";
             echo "<td>".$customer['c_surname']."</td>";
             echo "<td>".$customer['c_address']."</td>";
             echo "<td>".$customer['c_phone']."</td>";
             echo "<td>".$customer['c_email']."</td>";
-            echo "<td class='bot'><a ><input type='button' value='Update'></a>";
+            echo "<td class='bot'><a href='update_customer.php?Id=$id&name=$name&surname=$surname&address=$address&phone=$phone&email=$email'><input type='button' value='Update'></a>";
             echo "<td class='bot'><a href='delete_customer.php?Id=$id'><input type='button' value='Delete'></a>";
             echo "<td class='bot'><a href='new_transaction.php?Id=$id'><input type='button' value='Add Transaction'></a></td>";
             echo "</tr>";
@@ -85,8 +90,6 @@
 <div id="pages">
     <?php
         // ----------------------- Making buttons -----------------
-        
-
         for($i = 1; $i<=$total_pages; $i++){
             echo "<a href='?pagina=$i'><input type='button' name='pag' id='pag' value='Page ".$i."'></a>";
         }
