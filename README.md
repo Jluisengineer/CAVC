@@ -4,5 +4,6 @@ This is what I did during the CAVC college and the imporvments i did after the c
 Ther are several folders:
 
 
-  Mybank
-After the course I was studiyng php in deep to
+  * Mybank
+
+      After the course I was studiyng php and python in deep. Learning object oriented programming
