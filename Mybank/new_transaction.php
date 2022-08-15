@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My bank - New Transaction</title>
     <link rel="icon" href="img/icon-gold.png">
-    
+      
     <style>
         body{
             background-color: #ccebfd;
@@ -25,6 +25,7 @@
     </style>
 </head>
 <body>
+    
 <?php
         session_start();
 
@@ -45,17 +46,15 @@
     if(isset($_GET['Id'])){
         $id=$_GET['Id'];
         $row = $transaction->select_transaction($id);
+
         echo "<table width=30%>";
         while($customer = $row->fetch(PDO::FETCH_ASSOC)){
-            
+           
             echo "<tr><td class='tra'>".$customer['c_name']."</td>";
             echo "<td class='tra'>".$customer['c_surname']."</td>";
             echo "<td class='tra'>".$customer['ac_sortcode']."</td></tr>";
-        }
-        echo"</table>";
-
-        //echo($row['c_name']);
-        //echo
+        }  
+      
     } else{?>
         <div>
         <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="POST">
@@ -66,11 +65,13 @@
         <?php
             if(isset($_POST['name']) or isset($_POST['surname'])){
                 
-                $row=$transaction->search_customer($_POST['name'],$_POST['surname']);
-                echo "<table>"; 
+                $row=$transaction->select_transaction(0,$_POST['name'],$_POST['surname']);
+                echo "<table width=30%>"; 
                 while($customer = $row->fetch(PDO::FETCH_ASSOC)){
-                $id = $customer['c_id'];
-                echo "<tr><td>". $id;
+                    echo "<tr><td class='tra'>".$customer['c_name']."</td>";
+                    echo "<td class='tra'>".$customer['c_surname']."</td>";
+                    echo "<td class='tra'>".$customer['ac_sortcode']."</td></tr>";
+
                 }
                 echo"</table>";
             }
@@ -82,14 +83,14 @@
     ?>
 </div>
 <div>
-    <form action method="POST">
+    <form action='new_transaction1.php' method="POST">
     <table align="center" width='65%'>
         <tr><th class='tra'>Sort Code</th><th class='tra'>Reference</th><th class='tra'>in</th> <th class='tra'>Out</th></tr>
         <tr><td class='tra'><input type="text" name="s_code" id="s_code"></td>
         <td class='tra'><input type="text" name="refer" id="refer"></td>
-        <td class='tra' ><input type="text" name="in" id="in"></td>
-        <td class='tra'><input type="text" name="out" id="out"></td></tr>
-        <tr ><td class="bot"><a href=""><input type="button" value="Send"></a></td> <td class="bot"><a href="2_Employee"><input type="button" value="Home"></a></td></tr>
+        <td class='tra' ><input type="text" name="in" id="in" value=0></td>
+        <td class='tra'><input type="text" name="out" id="out" value=0></td></tr>
+        <tr ><td class="bot"><input type="submit" value="Send"></td> <td class="bot"><a href="2_Employee"><input type="button" value="Home"></a></td></tr>
     </table>
     </form>
 </div>

@@ -80,6 +80,7 @@
             echo "<td class='bot'><a href='update_customer.php?Id=$id&name=$name&surname=$surname&address=$address&phone=$phone&email=$email'><input type='button' value='Update'></a>";
             echo "<td class='bot'><a href='delete_customer.php?Id=$id'><input type='button' value='Delete'></a>";
             echo "<td class='bot'><a href='new_transaction.php?Id=$id'><input type='button' value='Add Transaction'></a></td>";
+            echo "<td class='bot'><a a href='more_info.php?Id=$id'><input type='button' value='More info'></a></td></tr>";
             echo "</tr>";
         }
         ?>

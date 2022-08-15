@@ -63,8 +63,8 @@ class Bank_Management extends Conexion{
         $result -> execute();
         return $result->rowCount();
     }
-    public function select_transaction($id){
-        $sql = "select c_name, c_surname, ac_number, ac_sortcode from customers inner join accounts on c_id=ac_c_id where c_id = $id";
+    public function select_transaction($id=0,$name="",$surname=""){
+        $sql = "select c_id, c_name, c_surname, ac_number, ac_sortcode from customers inner join accounts on c_id=ac_c_id where c_id = $id  or c_name='$name' or c_surname='$surname'";
         $result = $this->conexion -> prepare($sql);
         $result -> execute();
         return $result;
@@ -82,8 +82,23 @@ class Bank_Management extends Conexion{
         $result = $this->conexion -> prepare($sql);
         $result -> execute();
         return $result;
-    
     }
+
+    public function transaction($refer,$s_code,$in,$out){
+        // request
+        $sql="insert into transactions(tr_reference, tr_ac_sortcode, tr_in, tr_out) values('$refer','$s_code','$in','$out')";
+        $result = $this->conexion -> prepare($sql);
+        $result -> execute();
+        return $result;
+    }
+
+    public function balance($id){
+        $sql="select c_id, c_name, c_surname, tr_ac_sortcode, SUM(tr_in-tr_out) as Balance from ((customers inner join accounts on c_id=ac_c_id) inner join transactions on ac_sortcode = tr_ac_sortcode) where c_id=$id group by tr_ac_sortcode";
+        $result = $this->conexion -> prepare($sql);
+        $result -> execute();
+        return $result;
+    }
+
 }
 
 ?>

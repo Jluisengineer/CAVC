@@ -31,36 +31,28 @@
     $surname=$_POST['surname'];
     $search = new Bank_Management();
     $row = $search->search_customer($name,$surname);
-    echo "<table id='search'>
-    <tr><th>Id</th>
-    <th>Name</th>
-    <th>Surname</th>
-    <th>Address</th>
-    <th>Phone</th>
-    <th>email</th>
-    </tr>";  
+    echo "<table id='search'>";
+    echo "<tr><th>Id</th><th>Name</th><th>Surname</th><th>Address</th><th>Phone</th><th>email</th></tr>";  
         
         
     
     while($customer = $row->fetch(PDO::FETCH_ASSOC)){
         $id = $customer['c_id'];
-        $name = $customer['c_id'];
-        $surname = $customer['c_id'];
-        $address = $customer['c_id'];
-        $phone = $customer['c_id'];
-        $email = $customer['c_id'];
-        echo "
-        <tr><td>".$customer['c_id']."</td>
-        <td>".$customer['c_name']."</td>
-        <td>".$customer['c_surname']."</td>
-        <td>".$customer['c_address']."</td>
-        <td>".$customer['c_phone']."</td>
-        <td>".$customer['c_email']."</td>
-        <td ><a href=''update_customer.php?Id=$id&name=$name&surname=$surname&address=$address&phone=$phone&email=$email''><input type='button' value='Update'></a>
-        <td ><a href='delete_customer.php?Id=$id'><input type='button' value='Delete'></a>
-        <td ><a><input type='button' value='Add Transaction'></a></td>
-
-        </tr>";
+        $name = $customer['c_name'];
+        $surname = $customer['c_surname'];
+        $address = $customer['c_address'];
+        $phone = $customer['c_phone'];
+        $email = $customer['c_email'];
+        echo "<tr><td>".$customer['c_id']."</td>";
+        echo "<td>".$customer['c_name']."</td>";
+        echo "<td>".$customer['c_surname']."</td>";
+        echo "<td>".$customer['c_address']."</td>";
+        echo "<td>".$customer['c_phone']."</td>";
+        echo "<td>".$customer['c_email']."</td>";
+        echo "<td><a href='update_customer.php?Id=$id&name=$name&surname=$surname&address=$address&phone=$phone&email=$email'><input type='button' value='Update'></a>";
+        echo "<td><a href='delete_customer.php?Id=$id'><input type='button' value='Delete'></a>";
+        echo "<td><a a href='new_transaction.php?Id=$id'><input type='button' value='Add Transaction'></a></td>";
+        echo "<td><a a href='more_info.php?Id=$id'><input type='button' value='More info'></a></td></tr>";
     }
     echo "</table>";
     ?>
