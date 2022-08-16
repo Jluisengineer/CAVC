@@ -1,5 +1,5 @@
 # CAVC
-This is what I did during the CAVC college and the imporvments i did after the course.
+This is what I did during the CAVC college and the imporvments I did after the course.
 
 Ther are two folders:
 
