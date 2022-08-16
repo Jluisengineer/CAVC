@@ -14,12 +14,12 @@
 </head>
 <body>
     <?php
-            session_start();
+        session_start();
 
             if(!isset($_SESSION["user_1"])){
                 header("location:0_index.html");
-            }
-    echo "<h3> Welcome ".$_SESSION["user_1"]."</h3>";
+        }
+        echo "<h3> Welcome ".$_SESSION["user_1"]."</h3>";
     ?>
     <div>
     <h1>MyBank Customer Management</h1>

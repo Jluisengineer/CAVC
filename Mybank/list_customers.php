@@ -41,13 +41,14 @@
         } else {
             $page = 1;
         }
-
+        // --- number of clients, I'll show per page.
         $size = 20;
+        // --- Firs client I'll show in each page.
         $start = ($page-1)*$size;
-
+        // --- To know how many registers I have in my table.
         $numrows = $list -> number_customers();
+        
         $total_pages = ceil($numrows / $size);
-
         $row = $list -> list_customers($start,$size);
     
 
@@ -64,14 +65,14 @@
         
         <?php
         while($customer = $row->fetch(PDO::FETCH_ASSOC)){
-            echo "<tr>";
-            echo "<td>".$customer['c_id']."</td>";
             $id=$customer['c_id'];
             $name = $customer['c_name'];
             $surname= $customer['c_surname'];
             $address= $customer['c_address'];
             $phone= $customer['c_phone'];
             $email= $customer['c_email'];
+            echo "<tr>";
+            echo "<td>".$customer['c_id']."</td>";
             echo "<td>".$customer['c_name']."</td>";
             echo "<td>".$customer['c_surname']."</td>";
             echo "<td>".$customer['c_address']."</td>";
@@ -94,7 +95,7 @@
         for($i = 1; $i<=$total_pages; $i++){
             echo "<a href='?pagina=$i'><input type='button' name='pag' id='pag' value='Page ".$i."'></a>";
         }
-        echo "<a href=2_Employee.php><input type='button' value='Home'></a>";
+        echo "<a href=Employee.php><input type='button' value='Home'></a>";
     ?>
 </div>
 

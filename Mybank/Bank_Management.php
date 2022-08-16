@@ -1,4 +1,6 @@
 <?php
+// In this file, I create a new class with its methods
+
 require_once("conexion_DDBB/conexion.php");
 
 class Bank_Management extends Conexion{
@@ -20,10 +22,10 @@ class Bank_Management extends Conexion{
             $result -> closeCursor(); 
             $_SESSION["user_1"] = $record["e_name"];
             //echo $_SESSION["user_1"]; 
-            header("location:2_Employee.php");
+            header("location:Employee.php");
         } else{
             $result -> closeCursor(); 
-            header("location:0_index.html");
+            header("location:index.html");
         }
     }
 
@@ -85,7 +87,6 @@ class Bank_Management extends Conexion{
     }
 
     public function transaction($refer,$s_code,$in,$out){
-        // request
         $sql="insert into transactions(tr_reference, tr_ac_sortcode, tr_in, tr_out) values('$refer','$s_code','$in','$out')";
         $result = $this->conexion -> prepare($sql);
         $result -> execute();

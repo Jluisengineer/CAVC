@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<header>
+		<style>
+			@import url('https://fonts.googleapis.com/css?family=Bebas+Neue');
+			.lbl {width: 200px; text-align: left; display: inline-block;}
+		</style>
+		<title>
+			Bank of Sharpville
+		</title>
+	</header>
+
+	<body>
+		<h1 style="text-align: center; font-size: 70pt; font-family: 'Bebas Neue';">
+			Customer entry page
+		</h1>
+
+		<div style="text-align: center;">
+			<p>
+				Enter the new customer details and click the submit button
+			</p>
+
+			<form method="post" action="newcustomer.php">
+				<p>
+					<label for="cust_name" class="lbl">Customer name :</label>
+					<input name="cust_name" type="text"/>
+				</p>
+
+				<p>
+					<label for="cust_address" class="lbl">Customer address :</label>
+					<input name="cust_address" type="text"/>
+				</p>
+
+				<p>
+					<label for="cust_city" class="lbl">Customer city :</label>
+					<input name="cust_city" type="text"/>
+				</p>
+
+				<p>
+					<label for="cust_country" class="lbl">Customer country :</label>
+					<input name="cust_country" type="text"/>
+				</p>
+
+				<p>
+					<label for="cust_postcode" class="lbl">Customer postcode :</label>
+					<input name="cust_postcode" type="text"/>
+				</p>
+
+				<p>
+					<label for="cust_contact" class="lbl">Customer contact :</label>
+					<input name="cust_contact" type="text"/>
+				</p>
+
+				<p>
+					<input type="submit" style="padding: 20px; border-radius: 10px; display: inline-block; width: 150px; background-color: black; color: white" />
+				</p>
+			</form>
+		</div>
+	</body>
+</html>

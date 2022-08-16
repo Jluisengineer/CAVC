@@ -43,7 +43,7 @@ $email=$_GET['email'];
 <tr><td><label for="address">Address</laberl></td><td><label><?php echo $address?></laberl></td><td><input type="text" name="address" id="address" value="<?php echo $address ?>"></td></tr>
 <tr><td><label for="phone">Phone</laberl></td><td><label><?php echo $phone?></laberl></td><td><input type="text" name="phone" id="phone" value="<?php echo $phone ?>"></td></tr>
 <tr><td><label for="email">Email</laberl></td><td><label><?php echo $email?></laberl></td><td><input type="text" name="email" id="email" value="<?php echo $email ?>"></td></tr>
-<tr><td><input type='submit' id="send" value="Send"></td><td><a href='2_Employee.php'><input type='button' value='Home'></a></td></tr>
+<tr><td><input type='submit' id="send" value="Send"></td><td><a href='Employee.php'><input type='button' value='Home'></a></td></tr>
 </table>
 
 </form>

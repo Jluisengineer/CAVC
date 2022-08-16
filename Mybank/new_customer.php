@@ -32,7 +32,7 @@
             <tr><td><label>Address:</label></td><td><input type="text" name="address" id="address" placeholder="Address" required></td></tr>
             <tr><td><label>Phone:</label></td><td><input type="text" name="phone" id="phone" placeholder="Phone" required></td></tr>
             <tr><td><label>email:</label></td><td><input type="text" name="email" id="email" placeholder="Email@email" required></td></tr>
-            <tr><td><input type="submit" value="Add"></td><td><a href="2_Employee.php"><input type="button" id="return" value="Home"></a></td></tr>
+            <tr><td><input type="submit" value="Add"></td><td><a href="Employee.php"><input type="button" id="return" value="Home"></a></td></tr>
         </table>
         
     </form>

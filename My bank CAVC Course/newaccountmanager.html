@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<header>
+		<style>
+			@import url('https://fonts.googleapis.com/css?family=Bebas+Neue');
+			.lbl {width: 200px; text-align: left; display: inline-block;}
+		</style>
+		<title>
+			Bank of Sharpville
+		</title>
+	</header>
+
+	<body>
+		<h1 style="text-align: center; font-size: 70pt; font-family: 'Bebas Neue';">
+			New account manager
+		</h1>
+
+		<div style="text-align: center;">
+			<p>
+				Enter the new account manager details and click the submit button
+			</p>
+
+			<form method="post" action="newaccountmanager.php">
+				<p>
+					<label for="mgr_firstname" class="lbl">First name :</label>
+					<input name="mgr_firstname" type="text"/>
+				</p>
+
+				<p>
+					<label for="mgr_lastname" class="lbl">Last name :</label>
+					<input name="mgr_lastname" type="text"/>
+				</p>
+
+				<p>
+					<label for="mgr_email" class="lbl">Email address :</label>
+					<input name="mgr_email" type="text"/>
+				</p>
+
+				<p>
+					<label for="mgr_phone" class="lbl">Phone number :</label>
+					<input name="mgr_phone" type="text"/>
+				</p>
+
+				<p>
+					<input type="submit" style="padding: 20px; border-radius: 10px; display: inline-block; width: 150px; background-color: black; color: white" />
+				</p>
+			</form>
+		</div>
+	</body>
+</html>

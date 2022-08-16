@@ -39,7 +39,7 @@
     }
     echo "</table>";
     ?>
-    <div style="text-align: center; margin-top:25px;"><a href="2_Employee.php"><input type="button" value = "Home"></a><div>
+    <div style="text-align: center; margin-top:25px;"><a href="Employee.php"><input type="button" value = "Home"></a><div>
 
 
 

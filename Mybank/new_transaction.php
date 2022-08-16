@@ -90,7 +90,7 @@
         <td class='tra'><input type="text" name="refer" id="refer"></td>
         <td class='tra' ><input type="text" name="in" id="in" value=0></td>
         <td class='tra'><input type="text" name="out" id="out" value=0></td></tr>
-        <tr ><td class="bot"><input type="submit" value="Send"></td> <td class="bot"><a href="2_Employee"><input type="button" value="Home"></a></td></tr>
+        <tr ><td class="bot"><input type="submit" value="Send"></td> <td class="bot"><a href="Employee"><input type="button" value="Home"></a></td></tr>
     </table>
     </form>
 </div>

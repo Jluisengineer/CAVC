@@ -34,7 +34,7 @@
             <tr><td><label>Name:</label></td><td><input type="text" name="name" id="name" placeholder="Name" ></td></tr>
             <tr><td><label>Surname:</label></td><td><input type="text" name="surname" id="surname" placeholder="Surname" ></td></tr>
             
-            <tr><td><input type="submit" value="Search"></td><td><a href="2_Employee.php"><input type="button" id="return" value="Home"></a></td></tr>
+            <tr><td><input type="submit" value="Search"></td><td><a href="Employee.php"><input type="button" id="return" value="Home"></a></td></tr>
         </table>
         
     </form>

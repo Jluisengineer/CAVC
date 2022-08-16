@@ -23,6 +23,6 @@ if($result){
 }
 ?>
 
-<a href='2_Employee.php'><input type='button' value='Home'></a>
+<a href='Employee.php'><input type='button' value='Home'></a>
 </body>
 </html>

@@ -21,7 +21,7 @@ $newCustomer = new Bank_Management();
 $newCustomer->register_customer($name,$surname,$address,$phone,$email);
 
 ?>
-<a href="2_Employee.php"><input type="button" value="Home"></a>
+<a href="Employee.php"><input type="button" value="Home"></a>
 </body>
 </html>
 
