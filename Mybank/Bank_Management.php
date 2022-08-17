@@ -86,15 +86,15 @@ class Bank_Management extends Conexion{
         return $result;
     }
 
-    public function transaction($refer,$s_code,$in,$out){
-        $sql="insert into transactions(tr_reference, tr_ac_sortcode, tr_in, tr_out) values('$refer','$s_code','$in','$out')";
+    public function transaction($ac_num,$refer,$s_code,$in,$out){
+        $sql="insert into transactions(tr_reference, tr_ac_number, tr_ac_sortcode, tr_in, tr_out) values('$refer','$ac_num','$s_code','$in','$out')";
         $result = $this->conexion -> prepare($sql);
         $result -> execute();
         return $result;
     }
 
     public function balance($id){
-        $sql="select c_id, c_name, c_surname, tr_ac_sortcode, SUM(tr_in-tr_out) as Balance from ((customers inner join accounts on c_id=ac_c_id) inner join transactions on ac_sortcode = tr_ac_sortcode) where c_id=$id group by tr_ac_sortcode";
+        $sql="select c_id, c_name, c_surname, tr_ac_sortcode, SUM(tr_in-tr_out) as Balance from ((customers inner join accounts on c_id=ac_c_id) inner join transactions on ac_number = tr_ac_number) where c_id=$id group by tr_ac_sortcode";
         $result = $this->conexion -> prepare($sql);
         $result -> execute();
         return $result;

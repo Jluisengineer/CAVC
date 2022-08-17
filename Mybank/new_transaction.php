@@ -52,6 +52,7 @@
            
             echo "<tr><td class='tra'>".$customer['c_name']."</td>";
             echo "<td class='tra'>".$customer['c_surname']."</td>";
+            echo "<td class='tra'>".$customer['ac_number']."</td>";
             echo "<td class='tra'>".$customer['ac_sortcode']."</td></tr>";
         }  
       
@@ -70,6 +71,7 @@
                 while($customer = $row->fetch(PDO::FETCH_ASSOC)){
                     echo "<tr><td class='tra'>".$customer['c_name']."</td>";
                     echo "<td class='tra'>".$customer['c_surname']."</td>";
+                    echo "<td class='tra'>".$customer['ac_number']."</td>";
                     echo "<td class='tra'>".$customer['ac_sortcode']."</td></tr>";
 
                 }
@@ -85,8 +87,9 @@
 <div>
     <form action='new_transaction1.php' method="POST">
     <table align="center" width='65%'>
-        <tr><th class='tra'>Sort Code</th><th class='tra'>Reference</th><th class='tra'>in</th> <th class='tra'>Out</th></tr>
-        <tr><td class='tra'><input type="text" name="s_code" id="s_code"></td>
+        <tr><th class='tra'>Account Number</th><th class='tra'>Sort Code</th><th class='tra'>Reference</th><th class='tra'>in</th> <th class='tra'>Out</th></tr>
+        <tr><td class='tra'><input type="text" name="ac_num" id="ac_num"></td>
+        <td class='tra'><input type="text" name="s_code" id="s_code"></td>
         <td class='tra'><input type="text" name="refer" id="refer"></td>
         <td class='tra' ><input type="text" name="in" id="in" value=0></td>
         <td class='tra'><input type="text" name="out" id="out" value=0></td></tr>

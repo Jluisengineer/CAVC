@@ -11,12 +11,13 @@
 require_once("Bank_Management.php");
 $customer = new Bank_Management();
 $s_code=$_POST['s_code'];
+$ac_num=$_POST['ac_num'];
 $refer=$_POST['refer'];
 $in=$_POST['in'];
 $out=$_POST['out'];
 
 
-$result=$customer->transaction($refer,$s_code,$in,$out);
+$result=$customer->transaction($refer,$ac_num,$s_code,$in,$out);
 
 if($result){
     echo "Register updated";
