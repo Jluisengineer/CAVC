@@ -30,7 +30,7 @@
         session_start();
 
         if(!isset($_SESSION["user_1"])){
-            header("location:0_index.html");
+            header("location:index.html");
         }
         echo "<h3> Manager: ".$_SESSION["user_1"]."</h3>";
 ?>
@@ -93,7 +93,7 @@
         <td class='tra'><input type="text" name="refer" id="refer"></td>
         <td class='tra' ><input type="text" name="in" id="in" value=0></td>
         <td class='tra'><input type="text" name="out" id="out" value=0></td></tr>
-        <tr ><td class="bot"><input type="submit" value="Send"></td> <td class="bot"><a href="Employee"><input type="button" value="Home"></a></td></tr>
+        <tr ><td class="bot"><input type="submit" value="Send"></td> <td class="bot"><a href="Employee.php"><input type="button" value="Home"></a></td></tr>
     </table>
     </form>
 </div>

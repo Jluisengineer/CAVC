@@ -17,7 +17,7 @@
         session_start();
 
         if(!isset($_SESSION["user_1"])){
-            header("location:0_index.html");
+            header("location:index.html");
         }
         echo "<h3> Manager: ".$_SESSION["user_1"]."</h3>";
 ?>
