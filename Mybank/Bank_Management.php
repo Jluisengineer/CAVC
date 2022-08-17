@@ -30,6 +30,7 @@ class Bank_Management extends Conexion{
     }
 
     public function register_customer($name,$surname,$address,$phone,$email){
+        // --- insert into customers table
         $sql = "insert into customers(c_name,c_surname,c_address,c_phone,c_email) values(:m_name,:m_surname,:m_address,:m_phone,:m_email)";
         $result = $this->conexion -> prepare($sql);
         $result -> bindValue(":m_name",$name);
@@ -39,10 +40,31 @@ class Bank_Management extends Conexion{
         $result -> bindValue(":m_email",$email);
         $result -> execute();
         if($result){
-            echo"Customer Registered";
+            echo "Customer Registered.";
+            echo "\n";
+            
+        // --- insert into accounts table
+            $row = self::search_customer($name,$surname);
+
+            while($customer = $row->fetch(PDO::FETCH_ASSOC)){
+                $id = $customer['c_id'];
+            }
+            
+            $sort = rand(0,999)."-".rand(0,999)."-".rand(0,999);
+            $sql = "insert into accounts(ac_sortcode,ac_overlimit,ac_c_id) values('$sort',5000.00,$id)";
+            $result = $this->conexion -> prepare($sql);
+            $result -> execute();
+            if($result){
+                echo "Account Registered.";
+            } else{
+                echo "Something went wrong.";
+            }
+
         } else{
           echo "Something went worng!";  
         }
+
+
     }
 
     public function search_customer($name,$surname){
