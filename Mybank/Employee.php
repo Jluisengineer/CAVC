@@ -7,19 +7,18 @@
     <title>My bank - Employee</title>
     <link rel="icon" href="img/icon-gold.png">
     <link rel="stylesheet" href="styles/style_employee_area.css">
-    <style>
-        @import url('https://fonts.googleapis.com/css?family=Bebas+Neue');
+    <style> @import url('https://fonts.googleapis.com/css?family=Bebas+Neue');</style>
 
-    </style>
 </head>
 <body>
     <?php
         session_start();
 
             if(!isset($_SESSION["user_1"])){
-                header("location:0_index.html");
+                header("location:index.html");
         }
         echo "<h3> Welcome ".$_SESSION["user_1"]."</h3>";
+        echo "<a href='logout.php'><input type='button' value='Log out' id='logout'></a>";
     ?>
     <div>
     <h1>MyBank Customer Management</h1>
